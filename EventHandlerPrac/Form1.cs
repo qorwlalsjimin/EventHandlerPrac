@@ -34,6 +34,7 @@ namespace EventHandlerPrac
         // frame창 닫힐때
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
+            timer1.Enabled = false;
             MessageBox.Show(e.CloseReason.ToString()); //UserClosing
         }
 
@@ -50,6 +51,14 @@ namespace EventHandlerPrac
         {
             //타이머 켜추기
             timer1.Enabled = !timer1.Enabled; //켜져있을땐 끄고, 꺼져있을땐 켜주기
+            if(timer1.Enabled) 
+            {
+                button3.Text = "타이머 끄기";
+            }
+            else
+            {
+                button3.Text = "타이머 켜기";
+            }
         }
     }
 }
